@@ -11,7 +11,9 @@
     </Appenders>
 
     <Loggers>
-        <logger name="com.jonghan.spring.Contoller" level="DEBUG"/>
+        <Root level="debug">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
     </Loggers>
 
 </Configuation>
