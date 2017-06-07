@@ -25,3 +25,9 @@ springmvc-hibernate/\.classpath
 springmvc-hibernate/\.settings/
 
 Servers/
+
+springmvc-hibernate/\.idea/artifacts/
+
+springmvc-hibernate/\.idea/
+
+*.iml
