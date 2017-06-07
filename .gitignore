@@ -23,3 +23,5 @@ springmvc-hibernate/\.project
 springmvc-hibernate/\.classpath
 
 springmvc-hibernate/\.settings/
+
+Servers/
