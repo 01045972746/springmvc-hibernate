@@ -31,3 +31,5 @@ springmvc-hibernate/\.idea/artifacts/
 springmvc-hibernate/\.idea/
 
 *.iml
+
+\.idea/
