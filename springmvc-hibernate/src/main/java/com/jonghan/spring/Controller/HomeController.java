@@ -1,4 +1,4 @@
-package com.jonghan.spring;
+package com.jonghan.spring.Controller;
 
 import java.text.DateFormat;
 import java.util.Date;
