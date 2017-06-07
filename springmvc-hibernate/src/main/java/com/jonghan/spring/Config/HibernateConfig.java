@@ -43,6 +43,14 @@ public class HibernateConfig {
         dataSource.setUrl(environment.getRequiredProperty("jdbc.url"));
         dataSource.setUsername(environment.getRequiredProperty("jdbc.username"));
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
+
+        // Connection Properties
+        Properties props = new Properties();
+        props.put("validationQuery", "SELECT 1");
+        props.put("testWhileIdle", true);
+
+        dataSource.setConnectionProperties(props);
+
         return dataSource;
     }
 
