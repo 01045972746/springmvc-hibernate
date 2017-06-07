@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuation monitorInterval="60">
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <logger name="com.jonghan.spring.Contoller" level="DEBUG"/>
+    </Loggers>
+
+</Configuation>
