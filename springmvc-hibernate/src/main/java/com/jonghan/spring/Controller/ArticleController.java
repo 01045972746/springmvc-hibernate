@@ -50,4 +50,9 @@ public class ArticleController {
         articleService.deleteArticle(id);
         return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
     }
+
+    @GetMapping("test")
+    public @ResponseBody String test() {
+        return "TTTT";
+    }
 }

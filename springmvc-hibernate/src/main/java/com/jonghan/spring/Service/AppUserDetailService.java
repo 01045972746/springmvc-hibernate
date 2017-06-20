@@ -24,9 +24,9 @@ public class AppUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
         UserInfo activeUserInfo = userInfoDAO.getActiveUser(userName);
-        GrantedAuthority authority = new SimpleGrantedAuthority(activeUserInfo.getRole());
-        UserDetails userDetails = (UserDetails) new User(activeUserInfo.getUserName(),
-                activeUserInfo.getPassword(), Arrays.asList(authority));
+        GrantedAuthority authority = new SimpleGrantedAuthority(activeUserInfo.getUSR_ROLE());
+        UserDetails userDetails = (UserDetails) new User(activeUserInfo.getUSR_ID(),
+                activeUserInfo.getUSR_PW(), Arrays.asList(authority));
         return userDetails;
     }
 }

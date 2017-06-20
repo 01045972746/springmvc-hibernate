@@ -21,9 +21,8 @@ public class UserInfoDAO implements IUserInfoDAO {
     @Override
     public UserInfo getActiveUser(String userName) {
         UserInfo activeUserInfo = new UserInfo();
-        short enabled = 1;
-        List<?> list = hibernateTemplate.find("FROM UserInfo WHERE userName=? and enabled=?",
-                userName, enabled);
+        List<?> list = hibernateTemplate.find("FROM UserInfo WHERE USR_ID=? and USR_ENB=?",
+                userName, (short)1);
         if(!list.isEmpty()) {
             activeUserInfo = (UserInfo)list.get(0);
         }
