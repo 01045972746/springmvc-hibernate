@@ -13,29 +13,29 @@ public class SessionInfo implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "ses_id")
+    @Column(name = "SES_ID")
     private int ses_id;
-    @Column(name = "ses_xid")
+    @Column(name = "SES_XID")
     private int ses_xid;
-    @Column(name = "ses_tit")
+    @Column(name = "SES_TIT")
     private String ses_tit;
-    @Column(name = "ses_crt")
+    @Column(name = "SES_CRT")
     private String ses_crt;
-    @Column(name = "ses_pwd")
+    @Column(name = "SES_PWD")
     private String ses_pwd;
-    @Column(name = "ses_str")
+    @Column(name = "SES_STR")
     private long ses_str;
-    @Column(name = "ses_end")
+    @Column(name = "SES_END")
     private long ses_end;
-    @Column(name = "mps_id")
+    @Column(name = "MPS_ID")
     private int mps_id;
-    @Column(name = "cnf_id")
+    @Column(name = "CNF_ID")
     private int cnf_id;
-    @Column(name = "ses_ctr_opt")
+    @Column(name = "SES_CTR_OPT")
     private short ses_ctr_opt;
-    @Column(name = "ses_ato_opt")
+    @Column(name = "SES_ATO_OPT")
     private short ses_ato_opt;
-    @Column(name = "ses_chat_opt")
+    @Column(name = "SES_CHAT_OPT")
     private short ses_chat_opt;
 
     public int getSes_id() {
