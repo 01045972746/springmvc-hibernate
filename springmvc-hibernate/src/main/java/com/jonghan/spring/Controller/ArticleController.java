@@ -1,7 +1,7 @@
 package com.jonghan.spring.Controller;
 
 import com.jonghan.spring.Entity.Article;
-import com.jonghan.spring.Service.IArticleService;
+import com.jonghan.spring.Service.Interface.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

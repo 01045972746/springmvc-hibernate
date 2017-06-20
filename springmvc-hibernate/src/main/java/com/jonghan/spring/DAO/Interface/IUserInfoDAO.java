@@ -1,4 +1,4 @@
-package com.jonghan.spring.DAO;
+package com.jonghan.spring.DAO.Interface;
 
 import com.jonghan.spring.Entity.UserInfo;
 

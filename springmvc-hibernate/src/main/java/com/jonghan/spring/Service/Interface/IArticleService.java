@@ -1,4 +1,4 @@
-package com.jonghan.spring.Service;
+package com.jonghan.spring.Service.Interface;
 
 import com.jonghan.spring.Entity.Article;
 import org.springframework.security.access.annotation.Secured;

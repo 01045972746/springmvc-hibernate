@@ -1,7 +1,8 @@
 package com.jonghan.spring.Service;
 
-import com.jonghan.spring.DAO.IArticleDAO;
+import com.jonghan.spring.DAO.Interface.IArticleDAO;
 import com.jonghan.spring.Entity.Article;
+import com.jonghan.spring.Service.Interface.IArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

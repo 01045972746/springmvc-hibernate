@@ -1,6 +1,6 @@
 package com.jonghan.spring.Service;
 
-import com.jonghan.spring.DAO.IUserInfoDAO;
+import com.jonghan.spring.DAO.Interface.IUserInfoDAO;
 import com.jonghan.spring.Entity.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;

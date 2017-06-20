@@ -1,5 +1,6 @@
 package com.jonghan.spring.DAO;
 
+import com.jonghan.spring.DAO.Interface.IArticleDAO;
 import com.jonghan.spring.Entity.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
