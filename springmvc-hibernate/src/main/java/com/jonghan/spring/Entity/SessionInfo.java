@@ -13,124 +13,124 @@ public class SessionInfo implements Serializable {
 
     @Id
     @GeneratedValue
-    @Column(name = "SES_ID")
-    private int SES_ID;
-    @Column(name = "SES_XID")
-    private int SES_XID;
-    @Column(name = "SES_TIT")
-    private String SES_TIT;
-    @Column(name = "SES_CRT")
-    private String SES_CRT;
-    @Column(name = "SES_PWD")
-    private String SES_PWD;
-    @Column(name = "SES_STR")
-    private long SES_STR;
-    @Column(name = "SES_END")
-    private long SES_END;
-    @Column(name = "MPS_ID")
-    private int MPS_ID;
-    @Column(name = "CNF_ID")
-    private int CNF_ID;
-    @Column(name = "SES_CTR_OPT")
-    private short SES_CTR_OPT;
-    @Column(name = "SES_ATO_OPT")
-    private short SES_ATO_OPT;
-    @Column(name = "SES_CHAT_OPT")
-    private short SES_CHAT_OPT;
+    @Column(name = "ses_id")
+    private int ses_id;
+    @Column(name = "ses_xid")
+    private int ses_xid;
+    @Column(name = "ses_tit")
+    private String ses_tit;
+    @Column(name = "ses_crt")
+    private String ses_crt;
+    @Column(name = "ses_pwd")
+    private String ses_pwd;
+    @Column(name = "ses_str")
+    private long ses_str;
+    @Column(name = "ses_end")
+    private long ses_end;
+    @Column(name = "mps_id")
+    private int mps_id;
+    @Column(name = "cnf_id")
+    private int cnf_id;
+    @Column(name = "ses_ctr_opt")
+    private short ses_ctr_opt;
+    @Column(name = "ses_ato_opt")
+    private short ses_ato_opt;
+    @Column(name = "ses_chat_opt")
+    private short ses_chat_opt;
 
-    public int getSES_ID() {
-        return SES_ID;
+    public int getSes_id() {
+        return ses_id;
     }
 
-    public void setSES_ID(int SES_ID) {
-        this.SES_ID = SES_ID;
+    public void setSes_id(int ses_id) {
+        this.ses_id = ses_id;
     }
 
-    public int getSES_XID() {
-        return SES_XID;
+    public int getSes_xid() {
+        return ses_xid;
     }
 
-    public void setSES_XID(int SES_XID) {
-        this.SES_XID = SES_XID;
+    public void setSes_xid(int ses_xid) {
+        this.ses_xid = ses_xid;
     }
 
-    public String getSES_TIT() {
-        return SES_TIT;
+    public String getSes_tit() {
+        return ses_tit;
     }
 
-    public void setSES_TIT(String SES_TIT) {
-        this.SES_TIT = SES_TIT;
+    public void setSes_tit(String ses_tit) {
+        this.ses_tit = ses_tit;
     }
 
-    public String getSES_CRT() {
-        return SES_CRT;
+    public String getSes_crt() {
+        return ses_crt;
     }
 
-    public void setSES_CRT(String SES_CRT) {
-        this.SES_CRT = SES_CRT;
+    public void setSes_crt(String ses_crt) {
+        this.ses_crt = ses_crt;
     }
 
-    public String getSES_PWD() {
-        return SES_PWD;
+    public String getSes_pwd() {
+        return ses_pwd;
     }
 
-    public void setSES_PWD(String SES_PWD) {
-        this.SES_PWD = SES_PWD;
+    public void setSes_pwd(String ses_pwd) {
+        this.ses_pwd = ses_pwd;
     }
 
-    public long getSES_STR() {
-        return SES_STR;
+    public long getSes_str() {
+        return ses_str;
     }
 
-    public void setSES_STR(long SES_STR) {
-        this.SES_STR = SES_STR;
+    public void setSes_str(long ses_str) {
+        this.ses_str = ses_str;
     }
 
-    public long getSES_END() {
-        return SES_END;
+    public long getSes_end() {
+        return ses_end;
     }
 
-    public void setSES_END(long SES_END) {
-        this.SES_END = SES_END;
+    public void setSes_end(long ses_end) {
+        this.ses_end = ses_end;
     }
 
-    public int getMPS_ID() {
-        return MPS_ID;
+    public int getMps_id() {
+        return mps_id;
     }
 
-    public void setMPS_ID(int MPS_ID) {
-        this.MPS_ID = MPS_ID;
+    public void setMps_id(int mps_id) {
+        this.mps_id = mps_id;
     }
 
-    public int getCNF_ID() {
-        return CNF_ID;
+    public int getCnf_id() {
+        return cnf_id;
     }
 
-    public void setCNF_ID(int CNF_ID) {
-        this.CNF_ID = CNF_ID;
+    public void setCnf_id(int cnf_id) {
+        this.cnf_id = cnf_id;
     }
 
-    public short getSES_CTR_OPT() {
-        return SES_CTR_OPT;
+    public short getSes_ctr_opt() {
+        return ses_ctr_opt;
     }
 
-    public void setSES_CTR_OPT(short SES_CTR_OPT) {
-        this.SES_CTR_OPT = SES_CTR_OPT;
+    public void setSes_ctr_opt(short ses_ctr_opt) {
+        this.ses_ctr_opt = ses_ctr_opt;
     }
 
-    public short getSES_ATO_OPT() {
-        return SES_ATO_OPT;
+    public short getSes_ato_opt() {
+        return ses_ato_opt;
     }
 
-    public void setSES_ATO_OPT(short SES_ATO_OPT) {
-        this.SES_ATO_OPT = SES_ATO_OPT;
+    public void setSes_ato_opt(short ses_ato_opt) {
+        this.ses_ato_opt = ses_ato_opt;
     }
 
-    public short getSES_CHAT_OPT() {
-        return SES_CHAT_OPT;
+    public short getSes_chat_opt() {
+        return ses_chat_opt;
     }
 
-    public void setSES_CHAT_OPT(short SES_CHAT_OPT) {
-        this.SES_CHAT_OPT = SES_CHAT_OPT;
+    public void setSes_chat_opt(short ses_chat_opt) {
+        this.ses_chat_opt = ses_chat_opt;
     }
 }

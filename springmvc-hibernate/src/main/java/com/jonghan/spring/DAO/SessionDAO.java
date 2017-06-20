@@ -18,7 +18,7 @@ public class SessionDAO implements ISessionDAO {
     private HibernateTemplate hibernateTemplate;
 
     @Override
-    public SessionInfo getSession(int SES_ID) {
-        return hibernateTemplate.get(SessionInfo.class, SES_ID);
+    public SessionInfo getSession(int ses_id) {
+        return hibernateTemplate.get(SessionInfo.class, ses_id);
     }
 }

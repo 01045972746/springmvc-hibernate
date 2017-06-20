@@ -16,8 +16,8 @@ public class SessionService implements ISessionService{
     private ISessionDAO sessionDAO;
 
     @Override
-    public SessionInfo getSession(int SES_ID) {
-        SessionInfo obj = this.sessionDAO.getSession(SES_ID);
+    public SessionInfo getSession(int ses_id) {
+        SessionInfo obj = this.sessionDAO.getSession(ses_id);
         return obj;
     }
 }

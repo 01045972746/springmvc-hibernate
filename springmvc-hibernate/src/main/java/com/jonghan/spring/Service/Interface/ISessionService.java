@@ -8,5 +8,5 @@ import org.springframework.security.access.annotation.Secured;
  */
 public interface ISessionService {
     @Secured({"ROLE_ADMIN"})
-    SessionInfo getSession(int SES_ID);
+    SessionInfo getSession(int ses_id);
 }

@@ -2,6 +2,8 @@ package com.jonghan.spring.Controller;
 
 import com.jonghan.spring.Entity.SessionInfo;
 import com.jonghan.spring.Service.Interface.ISessionService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,13 +19,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("mob")
 public class AppRestController {
 
+    private static final Logger logger = LogManager.getLogger(AppRestController.class.getName());
+
     @Autowired
     private ISessionService sessionService;
 
     @GetMapping("session/{id}")
     public ResponseEntity<SessionInfo> getArticleById(@PathVariable("id") Integer id) {
         SessionInfo sessionInfo = this.sessionService.getSession(id);
+        logger.info(new ResponseEntity<SessionInfo>(sessionInfo, HttpStatus.OK));
         return new ResponseEntity<SessionInfo>(sessionInfo, HttpStatus.OK);
+    }
+
+    @GetMapping("test")
+    public String getet() {
+        return "home";
     }
 
 
