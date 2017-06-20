@@ -1,14 +1,13 @@
 package com.jonghan.spring.Entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by jonghan on 17. 6. 20.
  */
+@Entity
+@Table(name="articles")
 public class Article implements Serializable {
 
     private static final long serialVersionUID = 6285843869487220745L;

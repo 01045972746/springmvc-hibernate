@@ -1,19 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuation monitorInterval="60">
-    <Appenders>
-        <Console name="CONSOLE" target="SYSTEM_OUT">
-            <PatternLayout>
-                <pattern>
-                    [%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n
-                </pattern>>
-            </PatternLayout>
+<configuration status="WARN">
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss.SSS}] [%t] [%-5level] [%logger{36}] - %msg%n" />
         </Console>
-    </Appenders>
 
-    <Loggers>
-        <Root level="debug">
-            <AppenderRef ref="CONSOLE"/>
-        </Root>
-    </Loggers>
+        <!--<RollingFile name="file" fileName="./logs/all.log" filePattern="./logs/all.%i.%d{yyyy-MM-dd}.log">-->
+            <!--<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />-->
+            <!--<Policies>-->
+                <!--<SizeBasedTriggeringPolicy size="10MB" /> &lt;!&ndash; 이 용량이 초과되면 아래 DefaultRolloverStrategy 정책만큼 넘버링 할거다. &ndash;&gt;-->
+            <!--</Policies>-->
+            <!--<DefaultRolloverStrategy max="1000" fileIndex="min" />&lt;!&ndash; 0부터 1000개 까지만 만들거다 1000개 초과되면 파일이 더생성안된다. &ndash;&gt;-->
+        <!--</RollingFile>-->
+    </appenders>
 
-</Configuation>
+    <loggers>
+
+        <!-- 모든 로그는 dubug레벨 이상일때만 찍고 -->
+        <root level="debug" additivity="false" >
+            <appender-ref ref="console" />
+        </root>
+
+        <!-- 로그많이 찍어대는 요놈들은 warn수준이상만 찍겠다. -->
+
+        <logger name="org.springframework" level="warn" additivity="false" >
+            <appender-ref ref="console" />
+        </logger>
+
+        <logger name="org.apache.http" level="warn" additivity="false" >
+            <appender-ref ref="console" />
+        </logger>
+
+
+        <!-- 내패키지는 무조건 찍자 -->
+        <logger name="com.jonghan.spring" level="trace" additivity="false" >
+            <appender-ref ref="console" />
+        </logger>
+
+    </loggers>
+</configuration>
+
