@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -22,10 +23,15 @@ public class BlogController {
     @Autowired
     private IPostService postService;
 
-    @GetMapping("blogs")
-    public String getet() {
-        List<POST> post =  postService.getAllPost();
-        System.out.println(post);
+    @GetMapping("posts")
+    public String getAllposting() {
+        List<POST> posts = this.postService.getAllPost();
         return "index";
+    }
+
+    @GetMapping("post/{id}")
+    public String getPostByID(@PathVariable("id") int p_id) {
+        POST post = this.postService.getPostByID(p_id);
+        return "post";
     }
 }
