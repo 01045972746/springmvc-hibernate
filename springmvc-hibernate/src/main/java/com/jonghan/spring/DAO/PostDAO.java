@@ -1,7 +1,7 @@
 package com.jonghan.spring.DAO;
 
 import com.jonghan.spring.DAO.Interface.IPostDAO;
-import com.jonghan.spring.Entity.POSTING;
+import com.jonghan.spring.Entity.POST;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
@@ -23,13 +23,13 @@ public class PostDAO implements IPostDAO{
 
 
     @Override
-    public List<POSTING> getAllPost() {
-        String hql = "FROM POSTING as p ORDER BY p.P_REG_DATE";
-        return (List<POSTING>) this.hibernateTemplate.find(hql);
+    public List<POST> getAllPost() {
+        String hql = "FROM POST p ORDER BY p.p_rg_dt DESC ";
+        return (List<POST>) this.hibernateTemplate.find(hql);
     }
 
     @Override
-    public POSTING getPostByID(int p_id) {
-        return this.hibernateTemplate.get(POSTING.class, p_id);
+    public POST getPostByID(int p_id) {
+        return this.hibernateTemplate.get(POST.class, p_id);
     }
 }

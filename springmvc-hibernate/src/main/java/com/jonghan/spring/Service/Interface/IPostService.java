@@ -1,13 +1,13 @@
-package com.jonghan.spring.DAO.Interface;
+package com.jonghan.spring.Service.Interface;
 
 import com.jonghan.spring.Entity.POST;
 
 import java.util.List;
 
 /**
- * Created by jonghan.kim on 22/06/2017.
+ * Created by jong-850 on 2017-06-22.
  */
-public interface IPostDAO {
+public interface IPostService {
     List<POST> getAllPost();
     POST getPostByID(int p_id);
 }

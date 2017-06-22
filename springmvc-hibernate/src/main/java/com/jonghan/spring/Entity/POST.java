@@ -7,8 +7,8 @@ import java.io.Serializable;
  * Created by jonghan.kim on 22/06/2017.
  */
 @Entity
-@Table(name = "POSTING")
-public class POSTING implements Serializable{
+@Table(name = "POST")
+public class POST implements Serializable{
     private static final long serialVersionUID = 8404799363042035020L;
 
     @Id
@@ -22,8 +22,8 @@ public class POSTING implements Serializable{
     @Column(name = "P_CNT")
     private String p_cnt;
 
-    @Column(name = "P_REG_DATE")
-    private long p_reg_date;
+    @Column(name = "P_RG_DT")
+    private long p_rg_dt;
 
     public int getP_id() {
         return p_id;
@@ -49,11 +49,11 @@ public class POSTING implements Serializable{
         this.p_cnt = p_cnt;
     }
 
-    public long getP_reg_date() {
-        return p_reg_date;
+    public long getP_rg_dt() {
+        return p_rg_dt;
     }
 
-    public void setP_reg_date(long p_reg_date) {
-        this.p_reg_date = p_reg_date;
+    public void setP_rg_dt(long p_rg_dt) {
+        this.p_rg_dt = p_rg_dt;
     }
 }
