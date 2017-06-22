@@ -1,5 +1,6 @@
 package com.jonghan.spring.Controller;
 
+import com.jonghan.spring.Entity.PCOMMENT;
 import com.jonghan.spring.Entity.POST;
 import com.jonghan.spring.Service.Interface.IPostService;
 import org.apache.logging.log4j.LogManager;

@@ -2,6 +2,8 @@ package com.jonghan.spring.Entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by jonghan.kim on 22/06/2017.
@@ -24,6 +26,10 @@ public class POST implements Serializable{
 
     @Column(name = "P_RG_DT")
     private long p_rg_dt;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "P_ID")
+    private List<PCOMMENT> p_comments;
 
     public int getP_id() {
         return p_id;
@@ -55,5 +61,13 @@ public class POST implements Serializable{
 
     public void setP_rg_dt(long p_rg_dt) {
         this.p_rg_dt = p_rg_dt;
+    }
+
+    public List<PCOMMENT> getP_comments() {
+        return p_comments;
+    }
+
+    public void setP_comments(List<PCOMMENT> p_comments) {
+        this.p_comments = p_comments;
     }
 }

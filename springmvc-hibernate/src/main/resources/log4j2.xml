@@ -29,7 +29,7 @@
         </logger>
 
         <!-- Log everything in hibernate -->
-        <Logger name="org.hibernate" level="info" additivity="false">
+        <Logger name="org.hibernate" level="debug" additivity="false">
             <AppenderRef ref="Console" />
         </Logger>
 
