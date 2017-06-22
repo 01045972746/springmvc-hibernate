@@ -15,7 +15,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class PostDAO implements IPostDAO{
+public class PostDAO implements IPostDAO {
     @Autowired
     private SessionFactory sessionFactory;
     @Autowired
@@ -24,8 +24,11 @@ public class PostDAO implements IPostDAO{
 
     @Override
     public List<POST> getAllPost() {
-        String hql = "FROM POST p ORDER BY p.p_rg_dt DESC ";
-        return (List<POST>) this.hibernateTemplate.find(hql);
+        String hql = "FROM POST p ORDER BY p.p_rg_dt DESC";
+        List<POST> posts = sessionFactory.getCurrentSession().createQuery(hql)
+                .setMaxResults(3)
+                .list();
+        return posts;
     }
 
     @Override

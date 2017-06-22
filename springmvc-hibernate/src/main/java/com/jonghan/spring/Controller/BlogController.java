@@ -24,9 +24,10 @@ public class BlogController {
     private IPostService postService;
 
     @GetMapping("posts")
-    public String getAllposting() {
+    public String getAllposting(Model model) {
         List<POST> posts = this.postService.getAllPost();
-        return "index";
+        model.addAttribute("posts", posts);
+        return "posts";
     }
 
     @GetMapping("post/{id}")
