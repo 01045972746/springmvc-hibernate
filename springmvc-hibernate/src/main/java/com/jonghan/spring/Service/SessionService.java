@@ -1,6 +1,8 @@
 package com.jonghan.spring.Service;
 
 import com.jonghan.spring.DAO.Interface.ISessionDAO;
+import com.jonghan.spring.Entity.MPS;
+import com.jonghan.spring.Entity.Region;
 import com.jonghan.spring.Entity.SessionInfo;
 import com.jonghan.spring.Service.Interface.ISessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,5 +21,16 @@ public class SessionService implements ISessionService{
     public SessionInfo getSession(int ses_id) {
         SessionInfo obj = this.sessionDAO.getSession(ses_id);
         return obj;
+    }
+
+    @Override
+    public Region getRegion(int rgn_id) {
+        Region obj = this.sessionDAO.getRegion(rgn_id);
+        return obj;
+    }
+
+    @Override
+    public MPS getMPS(int mps_id) {
+        return this.sessionDAO.getMPS(mps_id);
     }
 }

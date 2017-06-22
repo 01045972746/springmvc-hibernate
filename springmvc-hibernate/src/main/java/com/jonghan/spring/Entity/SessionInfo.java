@@ -27,10 +27,16 @@ public class SessionInfo implements Serializable {
     private long ses_str;
     @Column(name = "SES_END")
     private long ses_end;
+
     @Column(name = "MPS_ID")
     private int mps_id;
+
+
+
     @Column(name = "CNF_ID")
     private int cnf_id;
+
+
     @Column(name = "SES_CTR_OPT")
     private short ses_ctr_opt;
     @Column(name = "SES_ATO_OPT")
