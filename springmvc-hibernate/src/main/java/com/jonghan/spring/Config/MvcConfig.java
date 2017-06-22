@@ -47,4 +47,13 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         builder.indentOutput(true);
         converters.add(new MappingJackson2HttpMessageConverter(builder.build()));
     }
+
+    // IF You use API enetities, try this on Controller
+    // MediaType is application/JSON
+    /*@GetMapping("session/{id}")
+    public ResponseEntity<SessionInfo> getArticleById(@PathVariable("id") Integer id) {
+        SessionInfo sessionInfo = this.sessionService.getSession(id);
+        logger.info(new ResponseEntity<SessionInfo>(sessionInfo, HttpStatus.OK));
+        return new ResponseEntity<SessionInfo>(sessionInfo, HttpStatus.OK);
+    }*/
 }
