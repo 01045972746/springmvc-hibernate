@@ -5,9 +5,9 @@
   Time: 오후 8:47
   To change this template use File | Settings | File Templates.
 --%>
-<%@include file="includes/head.jsp"%>
+<%@include file="includes/head.jsp" %>
 <body>
-<%@include file="includes/navigation.jsp"%>
+<%@include file="includes/navigation.jsp" %>
 
 <!-- Page Content -->
 <div class="container">
@@ -35,9 +35,10 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-
-            <hr>
+            <c:forEach var="photo" items="${post.p_photos}" begin="0" varStatus="status">
+                <img class="img-responsive" src="${photo.h_path}" alt="">
+                <hr>
+            </c:forEach>
 
             <!-- Post Content -->
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut,
@@ -66,56 +67,32 @@
             <!-- Posted Comments -->
 
             <!-- Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="http://placehold.it/64x64" alt="">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">Start Bootstrap
-                        <small>August 25, 2014 at 9:30 PM</small>
-                    </h4>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                    vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-            </div>
-
-            <!-- Comment -->
-            <div class="media">
-                <a class="pull-left" href="#">
-                    <img class="media-object" src="http://placehold.it/64x64" alt="">
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">Start Bootstrap
-                        <small>August 25, 2014 at 9:30 PM</small>
-                    </h4>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
-                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-                    vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    <!-- Nested Comment -->
-                    <div class="media">
-                        <a class="pull-left" href="#">
-                            <img class="media-object" src="http://placehold.it/64x64" alt="">
-                        </a>
-                        <div class="media-body">
-                            <h4 class="media-heading">Nested Start Bootstrap
-                                <small>August 25, 2014 at 9:30 PM</small>
-                            </h4>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin
-                            commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
-                            condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                        </div>
+            <c:if test="${post.p_comments.size() > 0}">
+            <c:forEach var="comments" items="${post.p_comments}" begin="0" varStatus="status">
+                <div class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://placehold.it/64x64" alt="">
+                    </a>
+                    <div class="media-body">
+                        <h4 class="media-heading">${comments.c_crt}
+                            <small>${comments.c_rg_dt}</small>
+                        </h4>
+                            ${comments.c_cnt}
                     </div>
-                    <!-- End Nested Comment -->
                 </div>
-            </div>
+            </c:forEach>
+            </c:if>
+            <c:if test="${post.p_comments.size() eq 0}">
+                <p class="lead">No Comments</p>
+            </c:if>
+
 
         </div>
 
         <!-- Blog Sidebar Widgets Column -->
         <div class="col-md-4">
 
-            <%@include file="includes/sidebar.jsp"%>
+            <%@include file="includes/sidebar.jsp" %>
 
         </div>
 
@@ -123,12 +100,12 @@
     <!-- /.row -->
 
     <hr>
-    
-<%@include file="includes/footer.jsp"%>
+
+    <%@include file="includes/footer.jsp" %>
 </div>
 <!-- /.container -->
 
-<%@include file="includes/tail.jsp"%>
+<%@include file="includes/tail.jsp" %>
 
 </body>
 

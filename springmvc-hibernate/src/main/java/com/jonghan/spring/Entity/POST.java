@@ -34,7 +34,7 @@ public class POST implements Serializable{
     @JoinColumn(name = "P_ID")
     private List<PCOMMENT> p_comments = new ArrayList<PCOMMENT>();
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "P_ID")
     @Fetch(value = FetchMode.SUBSELECT)
     private List<PPHOTO> p_photos = new ArrayList<PPHOTO>();

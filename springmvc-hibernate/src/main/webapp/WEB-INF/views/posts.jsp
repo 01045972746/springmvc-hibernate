@@ -31,6 +31,9 @@
                             <img class="img-responsive" src="${photo.h_path}" alt="">
                         </c:forEach>
                     </c:if>
+                    <c:if test = "${item.p_photos.size() eq 0}">
+                        <img class="img-responsive" src="https://goo.gl/M2xgk6" alt="">
+                    </c:if>
                 <hr>
                 <p>
                     <span class="glyphicon glyphicon-comment"></span>
