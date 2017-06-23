@@ -22,11 +22,15 @@
             <!-- Title -->
             <h1><c:out value="${post.p_tit}"/></h1>
 
-            <!-- Author -->
-            <p class="lead">
-                by <a href="#">jonghan</a>
-            </p>
-
+            <!-- Author & List Button-->
+            <div class="row">
+                <div class="col col-md-8">
+                        <p class="lead">by <a href="mailto:jonghan.kim@cdnetworks.co.kr">jonghan</a></p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <a href="/posts" class="btn btn-primary" role="button">Go List</a>
+                </div>
+            </div>
             <hr>
 
             <!-- Date/Time -->

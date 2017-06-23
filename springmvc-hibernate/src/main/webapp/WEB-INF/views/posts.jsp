@@ -22,7 +22,7 @@
                     <a href="<c:url value="/post/${item.p_id}"/>">${item.p_tit}</a>
                 </h2>
                 <p class="lead">
-                    by <a href="index.php">jonghan</a>
+                    by <a href="mailto:jonghan.kim@cdnetworks.co.kr">jonghan</a>
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on ${item.p_rg_dt}</p>
                 <hr>
