@@ -26,11 +26,29 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on ${item.p_rg_dt}</p>
                 <hr>
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
+                    <c:if test = "${item.p_photos.size() > 0}">
+                        <c:forEach var="photo" items="${item.p_photos}" begin="0" varStatus="pstatus">
+                            <img class="img-responsive" src="${photo.h_path}" alt="">
+                        </c:forEach>
+                    </c:if>
                 <hr>
-                <p>${item.p_cnt}</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p>
+                    <span class="glyphicon glyphicon-comment"></span>
+                    <c:if test="${item.p_comments.size() eq 0}">
+                        <a href="/post/<c:out value="${item.p_id}"/>">
+                            0 comment
+                        </a>
+                    </c:if>
+                    <c:if test="${item.p_comments.size() > 0}">
+                        <a href="/post/<c:out value="${item.p_id}"/>">
+                            <c:out value="${item.p_comments.size()}"/> comments
+                        </a>
+                    </c:if>
 
+                </p>
+                <a class="btn btn-primary" href="/post/<c:out value="${item.p_id}"/>">
+                    Read More <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
                 <hr>
             </c:forEach>
 

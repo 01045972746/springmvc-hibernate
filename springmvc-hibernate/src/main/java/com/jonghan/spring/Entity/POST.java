@@ -1,5 +1,8 @@
 package com.jonghan.spring.Entity;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -29,7 +32,13 @@ public class POST implements Serializable{
 
     @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "P_ID")
-    private List<PCOMMENT> p_comments;
+    private List<PCOMMENT> p_comments = new ArrayList<PCOMMENT>();
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "P_ID")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<PPHOTO> p_photos = new ArrayList<PPHOTO>();
+
 
     public int getP_id() {
         return p_id;
@@ -69,5 +78,13 @@ public class POST implements Serializable{
 
     public void setP_comments(List<PCOMMENT> p_comments) {
         this.p_comments = p_comments;
+    }
+
+    public List<PPHOTO> getP_photos() {
+        return p_photos;
+    }
+
+    public void setP_photos(List<PPHOTO> p_photos) {
+        this.p_photos = p_photos;
     }
 }
