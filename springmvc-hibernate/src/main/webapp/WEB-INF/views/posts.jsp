@@ -24,7 +24,14 @@
                 <p class="lead">
                     by <a href="mailto:jonghan.kim@cdnetworks.co.kr">jonghan</a>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on ${item.p_rg_dt}</p>
+
+                <!-- Converting UnixTimeStamp to Date -->
+                <jsp:useBean id="postdate" class="java.util.Date"/>
+                <jsp:setProperty name="postdate" property="time" value="${item.p_rg_dt}"/>
+
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <fmt:formatDate value="${postdate}"
+                                                                                            pattern="MM/dd/yyyy HH:mm"/>
+                </p>
                 <hr>
                     <c:if test = "${item.p_photos.size() > 0}">
                         <c:forEach var="photo" items="${item.p_photos}" begin="0" varStatus="pstatus">

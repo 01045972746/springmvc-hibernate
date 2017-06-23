@@ -18,6 +18,8 @@ import java.util.List;
 public class PostDAO implements IPostDAO {
     @Autowired
     private SessionFactory sessionFactory;
+
+
     @Autowired
     private HibernateTemplate hibernateTemplate;
 

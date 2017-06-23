@@ -25,7 +25,7 @@
             <!-- Author & List Button-->
             <div class="row">
                 <div class="col col-md-8">
-                        <p class="lead">by <a href="mailto:jonghan.kim@cdnetworks.co.kr">jonghan</a></p>
+                    <p class="lead">by <a href="mailto:jonghan.kim@cdnetworks.co.kr">jonghan</a></p>
                 </div>
                 <div class="col-6 col-md-4">
                     <a href="/posts" class="btn btn-primary" role="button">Go List</a>
@@ -33,9 +33,14 @@
             </div>
             <hr>
 
-            <!-- Date/Time -->
-            <p><span class="glyphicon glyphicon-time"></span> Posted on <c:out value="${post.p_rg_dt}"/></p>
+            <jsp:useBean id="myDate" class="java.util.Date"/>
+            <c:set target="${myDate}" property="time" value="${post.p_rg_dt}"/>
 
+            <!-- Date/Time -->
+            <p>
+                <span class="glyphicon glyphicon-time"></span> Posted on <fmt:formatDate value="${myDate}"
+                                                                                         pattern="MM/dd/yyyy HH:mm"/>
+            </p>
             <hr>
 
             <!-- Preview Image -->
@@ -72,19 +77,19 @@
 
             <!-- Comment -->
             <c:if test="${post.p_comments.size() > 0}">
-            <c:forEach var="comments" items="${post.p_comments}" begin="0" varStatus="status">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">${comments.c_crt}
-                            <small>${comments.c_rg_dt}</small>
-                        </h4>
-                            ${comments.c_cnt}
+                <c:forEach var="comments" items="${post.p_comments}" begin="0" varStatus="status">
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://placehold.it/64x64" alt="">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">${comments.c_crt}
+                                <small>${comments.c_rg_dt}</small>
+                            </h4>
+                                ${comments.c_cnt}
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
+                </c:forEach>
             </c:if>
             <c:if test="${post.p_comments.size() eq 0}">
                 <p class="lead">No Comments</p>
